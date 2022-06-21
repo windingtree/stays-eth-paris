@@ -44,12 +44,29 @@ export const WhiteParagraph18 = styled(Text)`
 
 const checkSpaceDatesRestrictions = (id: string, start: number, days: number) => {
   const restrictions: Record<string, { start: number, days: number, min: number }> = {
-    // EXAMPLE of date restrictions
-    // '0x7d1d4f2576df2029cb9eb2364fd402e48336ea7ff24426c146fe0af9d62cb84d': {
-    //   start: 134,
-    //   days: 3,
-    //   min: 1
-    // }
+    // Staycity, La Défense
+    '0xb28583856377b80079afd8cb51bd2439f5ed0e0443470e2df87488665b4f265f': {
+      start: 178,
+      days: 3,
+      min: 1
+    },
+    // Hôtel Plaza Athénée Paris
+    '0xdce3ba3d8c69835b4b61cb830e768a0c66719898f88a8d7c98171567b9dc140f': {
+      start: 178,
+      days: 3,
+      min: 1
+    },
+    // Hyatt Paris Madeleine
+    '0x5cf5c7887c34ea17dbd04663cc9f9af1d825d9ce57ed09cd20b6cad2c5191786': {
+      start: 178,
+      days: 2,
+      min: 1
+    },
+    '0xf6893c2b472af336b101b8c8b7a7e75bfe01bfff57d03354417a7390b256760d': {
+      start: 178,
+      days: 2,
+      min: 1
+    },
   };
 
   if (restrictions[id]) {
