@@ -56,13 +56,7 @@ export const Home = () => {
     <PageWrapper>
       <Box align='center' margin={{ bottom: 'large', top: 'large' }}>
         <CustomText size='3.5rem'>
-          Book your stay on-chain.
-        </CustomText>
-        <CustomText size='3.5rem'>
-          Check-in with your NFT.
-        </CustomText>
-        <CustomText size='1.5rem'>
-          EthCC - July 19-21
+          Ethereum Community Conference 5
         </CustomText>
       </Box>
 
