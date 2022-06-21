@@ -16,10 +16,10 @@ export const AppFooter = () => {
     >
       <Box align='center' margin={{ bottom: 'small' }}>
         <Text color={color} size='large'>
-          Created with 💖 for <a style={{ filter: location.pathname === '/' ? 'brightness(0) invert(1)' : 'brightness(0)' }} href="https://ethbarcelona.com/">ETHBarcelona</a>
+          Created with 💖 for <a style={{ filter: location.pathname === '/' ? 'brightness(0) invert(1)' : 'brightness(0)' }} href="https://ethcc.io/">EthCC</a>
         </Text>
         <Text color={color} size='large'>
-          July 6&ndash;8, Barcelona
+          July 19&ndash;21, Paris
         </Text>
       </Box>
 

@@ -20,7 +20,7 @@ export const GradientText = styled(Text)`
 `;
 
 export const CustomText = styled(Text)`
-  
+
   line-height: 1.36em;
   font-weight: 900;
   text-align: center;
@@ -62,7 +62,7 @@ export const Home = () => {
           Check-in with your NFT.
         </CustomText>
         <CustomText size='1.5rem'>
-          ETHBarcelona - July 6-8
+          EthCC - July 19-21
         </CustomText>
       </Box>
 

@@ -114,7 +114,7 @@ export const SearchForm: React.FC<{
       <Box
         margin={{ left: 'small' }}
       >
-        <Label style={{ marginLeft: '0.5rem' }}>Barcelona</Label>
+        <Label style={{ marginLeft: '0.5rem' }}>Paris</Label>
       </Box>
       <Box
         direction='column'
