@@ -37,7 +37,7 @@ library StayTokenMeta {
   ) internal pure returns (string memory) {
     return string(
       abi.encodePacked(
-        '"name":"Stay Amsterdam #',
+        '"name":"Stay Paris #',
         uintToString(tokenId),
         '","description":"Stay at lodging facility","image":"',
         tokenImageURI,
