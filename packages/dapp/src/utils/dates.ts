@@ -9,6 +9,6 @@ export const getDate = (days: number) => DateTime.fromMillis(
     .toMillis() + days * 86400 * 1000
 );
 
-// const target = DateTime.fromISO('2022-07-03').diff(DateTime.fromISO('2022-02-22'), 'days');
+// const target = DateTime.fromISO('2022-08-19').diff(DateTime.fromISO('2022-02-22'), 'days');
 // console.log('@@@@@', target.days);
-// console.log('#####', DateTime.fromISO('2022-02-22').plus({ days: 134 }).toISO());
+// console.log('#####', DateTime.fromISO('2022-02-22').plus({ days: 178 }).toISO());
