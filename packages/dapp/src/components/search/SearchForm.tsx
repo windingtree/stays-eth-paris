@@ -41,10 +41,10 @@ const tomorrow = today.plus({ days: 1 });
 
 // Paris Metaverse Summit: July 16-17
 // EthCC.io: July 19-21
-const defaultStartDay = DateTime.fromISO('2022-07-16');
-const defaultEndDay = DateTime.fromISO('2022-07-21');
+const defaultStartDay = DateTime.fromISO('2022-07-19');
+const defaultEndDay = DateTime.fromISO('2022-07-22');
 const defaultBoundStartDay = DateTime.fromISO('2022-07-16');
-const defaultBoundEndDay = DateTime.fromISO('2022-07-21');
+const defaultBoundEndDay = DateTime.fromISO('2022-07-22');
 
 const defaultStartDate = today.toMillis() > defaultStartDay.toMillis() ? today.toISO() : defaultStartDay.toISO()
 const defaultEndDate = tomorrow.toMillis() > defaultEndDay.toMillis() ? tomorrow.toISO() : defaultEndDay.toISO()
