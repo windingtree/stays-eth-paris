@@ -211,9 +211,9 @@ export const Search = () => {
   return (
     <PageWrapper>
       <Box align='center' margin={{ bottom: 'small' }}>
-        <Text size='3rem'>ETHBarcelona</Text>
+        <Text size='3rem'>EthCC</Text>
         <Text size='xlarge'>
-          July 6 - 8
+          July 19 - 21
         </Text>
       </Box>
 
