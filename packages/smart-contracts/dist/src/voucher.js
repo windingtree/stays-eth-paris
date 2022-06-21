@@ -17,7 +17,7 @@ const createVoucher = (signer, from, to, tokenId, verifyingContract, chainId) =>
         tokenId
     };
     const domain = {
-        name: 'Stay Barcelona',
+        name: 'Stay Paris',
         version: '1',
         chainId,
         verifyingContract

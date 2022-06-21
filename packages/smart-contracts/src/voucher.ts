@@ -21,7 +21,7 @@ export const createVoucher = async (
     tokenId
   };
   const domain = {
-    name: 'Stay Barcelona',
+    name: 'Stay Paris',
     version: '1',
     chainId,
     verifyingContract
