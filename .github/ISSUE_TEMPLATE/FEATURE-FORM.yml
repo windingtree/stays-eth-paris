@@ -19,7 +19,7 @@ body:
         - Event Organizers
         - Other (please describe)
     validations:
-      required: true
+      required: false
   - type: textarea
     attributes:
       label: Describe the feature you would like

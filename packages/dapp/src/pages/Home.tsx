@@ -55,9 +55,7 @@ export const Home = () => {
   return (
     <PageWrapper>
       <Box align='center' margin={{ bottom: 'large', top: 'large' }}>
-        <CustomText size='3.5rem'>
-          Ethereum Community Conference 5
-        </CustomText>
+
       </Box>
 
       {(isIpfsNodeConnecting || isBootstrapLoading) &&
