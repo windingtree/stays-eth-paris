@@ -23,7 +23,7 @@ export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
   return (
     <Box>
       <Box
-        margin={{ left: 'auto', right: 'auto', bottom: 'xlarge' }}
+        margin={{ left: 'auto', right: 'auto', bottom: 'large' }}
         pad={{ horizontal: 'small' }}
         width={{ width: '100%', max: '1090px' }}
       >
