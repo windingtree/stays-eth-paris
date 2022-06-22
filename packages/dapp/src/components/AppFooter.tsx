@@ -9,7 +9,7 @@ export const AppFooter = () => {
     <Footer
       responsive={true}
       justify='between'
-      margin={{ left: 'auto', right: 'auto', bottom: 'xlarge' }}
+      margin={{ left: 'auto', right: 'auto' }}
       pad={{ horizontal: 'small' }}
       width={{ width: '100%', max: '900px' }}
       direction='column'

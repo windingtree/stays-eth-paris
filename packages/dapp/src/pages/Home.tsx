@@ -54,11 +54,6 @@ export const Home = () => {
 
   return (
     <PageWrapper>
-      <Box align='center' margin={{ bottom: 'large', top: 'large' }}>
-        <CustomText size='3.5rem'>
-          Ethereum Community Conference 5
-        </CustomText>
-      </Box>
 
       {(isIpfsNodeConnecting || isBootstrapLoading) &&
         <Spinner color='white' alignSelf='center' size='medium' margin={{ top: 'large' }} />
@@ -70,6 +65,12 @@ export const Home = () => {
         </Text>
       </MessageBox>
 
+      <Box align='center' margin={{ bottom: 'medium', top: '18rem' }}>
+        <CustomText size='2rem'>
+          EthCC 5
+        </CustomText>
+      </Box>
+
       {
         !searchFormDisabled &&
         isReady &&
@@ -79,8 +80,8 @@ export const Home = () => {
 
       <a
         style={{
-          fontSize:'1rem',
-          marginTop: '4rem',
+          fontSize: '1rem',
+          marginTop: '1rem',
           alignSelf: 'center',
           filter: 'brightness(0) invert(1)'
         }}
