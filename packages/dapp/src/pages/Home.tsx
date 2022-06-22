@@ -55,8 +55,11 @@ export const Home = () => {
   return (
     <PageWrapper>
       <Box align='center' margin={{ bottom: 'large', top: 'large' }}>
+        <CustomText size='1.5rem'>
+          19-21 July
+        </CustomText>
         <CustomText size='3.5rem'>
-          Ethereum Community Conference 5
+          EthCC
         </CustomText>
       </Box>
 
@@ -79,7 +82,7 @@ export const Home = () => {
 
       <a
         style={{
-          fontSize:'1rem',
+          fontSize: '1rem',
           marginTop: '4rem',
           alignSelf: 'center',
           filter: 'brightness(0) invert(1)'
