@@ -146,7 +146,7 @@ export const Search = () => {
   return (
     <PageWrapper>
       <Box align='center' margin={{ bottom: 'small' }}>
-        <Text size='3rem'>Paris Metaverse Summit + EthCC</Text>
+        <Text size='3rem'>Ethereum Community Conference</Text>
         <Text size='xlarge'>
           July 16 - 21
         </Text>
