@@ -43,35 +43,49 @@ export const WhiteParagraph18 = styled(Text)`
 `;
 
 const checkSpaceDatesRestrictions = (id: string, start: number, days: number) => {
-  const restrictions: Record<string, { start: number, days: number, min: number }> = {
-    // Staycity, La Défense
+  const restrictions: Record<string, { start: number, end: number, min: number }> = {
+    // Staycity, La Défense. Studio Appartment
     '0xb28583856377b80079afd8cb51bd2439f5ed0e0443470e2df87488665b4f265f': {
       start: 147,
-      days: 3,
+      end: 150,
       min: 1
     },
-    // Hôtel Plaza Athénée Paris
+    // Hôtel Plaza Athénée Paris. Superior Room
     '0xdce3ba3d8c69835b4b61cb830e768a0c66719898f88a8d7c98171567b9dc140f': {
       start: 147,
-      days: 3,
+      end: 150,
       min: 1
     },
-    // Hyatt Paris Madeleine
+    // Hyatt Paris Madeleine. Hyatt Queen
     '0x5cf5c7887c34ea17dbd04663cc9f9af1d825d9ce57ed09cd20b6cad2c5191786': {
       start: 147,
-      days: 2,
+      end: 150,
       min: 1
     },
+    // Hyatt Paris Madeleine. Hyatt King
     '0xf6893c2b472af336b101b8c8b7a7e75bfe01bfff57d03354417a7390b256760d': {
       start: 147,
-      days: 2,
+      end: 150,
+      min: 1
+    },
+
+    // Hoy Paris Single Room
+    '0xd58f0074f20cfa887f168ec9ee23201a230fe9633de250c566559aa9e981570f': {
+      start: 146,
+      end: 150,
+      min: 1
+    },
+    // Hoy Paris Double Room
+    '0x6a6c618a5dbccae72ce785065ea1d6435532e04c76ebf427aa6f6b955080dad7': {
+      start: 146,
+      end: 150,
       min: 1
     },
   };
 
   if (restrictions[id]) {
     const startRule = start >= restrictions[id].start;
-    const endRule = (start + days) <= (restrictions[id].start + restrictions[id].days);
+    const endRule = (start + days) <= restrictions[id].end;
     const minRule = days >= restrictions[id].min;
     return startRule && endRule && minRule;
   }
