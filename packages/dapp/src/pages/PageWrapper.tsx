@@ -1,13 +1,14 @@
-import type { ReactNode } from 'react';
+import { ReactNode, useCallback } from 'react';
 import { useEffect, useState } from 'react';
 import type { Breadcrumb } from '../components/Breadcrumbs';
 import { useContext } from 'react';
-import { Anchor, Box, ResponsiveContext } from 'grommet';
+import { Anchor, Box, Text, Button, ResponsiveContext } from 'grommet';
 import { useAppState } from '../store';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { MessageBox } from '../components/MessageBox';
 import { getNetwork } from '../config';
 import { isMobile, browserName } from 'react-device-detect';
+import { utils } from 'ethers';
 
 const { name: allowedNetworkName } = getNetwork();
 
@@ -16,11 +17,18 @@ export interface PageWrapperProps {
   breadcrumbs?: Breadcrumb[];
 }
 
+interface ProviderRpcError extends Error {
+  message: string;
+  code: number;
+  data?: unknown;
+}
+
+const { chainId, rpc, name } = getNetwork();
+
 export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
   const size = useContext(ResponsiveContext);
   const { isRightNetwork } = useAppState();
   const [isSupported, setIsSupported] = useState(false)
-
   useEffect(() => {
     if (window.ethereum) {
       handleEthereum();
@@ -47,6 +55,32 @@ export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
     }
   }, [])
 
+  const switchNetwork = useCallback(async () => {
+    if (window.ethereum.networkVersion !== chainId) {
+      try {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: utils.hexlify(chainId) }]
+        });
+      } catch (e) {
+        // This error code indicates that the chain has not been added to MetaMask
+        if ((e as ProviderRpcError).code === 4902) {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainName: name,
+                chainId: utils.hexlify(chainId),
+                nativeCurrency: { name: 'XDAI', decimals: 18, symbol: 'XDAY' },
+                rpcUrls: [rpc]
+              }
+            ]
+          });
+        }
+      }
+    }
+  }, [])
+
   return (
     <Box>
       <Box
@@ -59,7 +93,10 @@ export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
           size={size}
         />
         <MessageBox type='warn' show={!isRightNetwork}>
-          You are connected to a wrong network. Please switch to: {allowedNetworkName}
+          <Box gap='small' direction='row' align='center'>
+            <Text>You are connected to a wrong network. Please switch to </Text>
+            <Button color='black' label={allowedNetworkName} onClick={() => switchNetwork()} />
+          </Box>
         </MessageBox>
         <MessageBox type='warn' show={!isSupported && isMobile}>
           Mobile {browserName} does not support web3 apps. Open with <Anchor label='metamask' href={`https://metamask.app.link/dapp/${window.location.href}`} />
