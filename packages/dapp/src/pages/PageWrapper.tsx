@@ -23,7 +23,7 @@ interface ProviderRpcError extends Error {
   data?: unknown;
 }
 
-const { chainId, rpc, name } = getNetwork();
+const { chainId, rpc, name, currency } = getNetwork();
 
 export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
   const size = useContext(ResponsiveContext);
@@ -71,7 +71,7 @@ export const PageWrapper = ({ children, breadcrumbs }: PageWrapperProps) => {
               {
                 chainName: name,
                 chainId: utils.hexlify(chainId),
-                nativeCurrency: { name: 'XDAI', decimals: 18, symbol: 'XDAY' },
+                nativeCurrency: { name: currency, decimals: 18, symbol: currency },
                 rpcUrls: [rpc]
               }
             ]
